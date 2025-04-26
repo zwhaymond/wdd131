@@ -1,0 +1,81 @@
+/* styles.css */
+
+body {
+    font-family: Georgia, serif;
+    margin: 40px;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .container {
+    max-width: 1000px; /* much wider outer box */
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .content {
+    max-width: 600px; /* narrow inside content */
+    margin: auto;
+  }
+  
+  header {
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    color: #13a1f3;
+    margin-top: 15px;
+    border-bottom: 2px solid #d4d2d2; /* Added underline */
+    padding-bottom: 10px; /* Adjusts spacing between text and line */
+  }
+  
+  
+  p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    margin: 20px 0;
+  }  
+  
+  em {
+    display: block;
+    font-style: italic;
+    text-align: left;
+    margin: 20px 0 10px 0;
+    font-size: 1.05em;
+  }
+  
+  ol {
+    max-width: 550px;
+    margin: 0 auto 30px auto;
+    font-size: 1.05em;
+    padding-left: 30px;
+  }
+  
+  ol li {
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 2;
+  }
+  
+  
+  .logo {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .logo img {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+  }
+  
+  
