@@ -1,0 +1,122 @@
+/* Import Mooli font for headlines */
+@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+/* === Global Styles === */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px; /* increased base size */
+  margin: 0;
+  background-color: #eee;
+  color: #333;
+}
+
+main {
+  width: 100%; /* Full width for the main section */
+  max-width: 1200px; /* Max width to limit size on large screens */
+  text-align: center;
+  margin: 0 auto; /* Ensures the content is centered */
+  padding: 2em 0; /* Add some padding for spacing */
+}
+
+/* Header and Footer Styling */
+header, footer {
+  background-color: #5a4db2;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Mooli', Arial, sans-serif;
+  margin: 0.5em 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+/* === Navigation === */
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.5em;
+  background-color: #4a3c9e;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+/* === Menu Button === */
+button.menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  font-family: 'Mooli', Arial, sans-serif;
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+/* === Gallery Section === */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Automatically adjusts the number of columns */
+  gap: 1em;
+  justify-items: center; /* Center images within each grid item */
+  padding: 0 1em; /* Add some padding on the left and right for more space */
+  max-width: 100%; /* Ensures the gallery container can take up the full width */
+  margin: 0 auto; /* Centers the gallery container */
+}
+
+.gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border: 4px solid white;
+}
+
+.gallery figcaption {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* === Footer === */
+footer {
+  font-size: 0.85em;
+}
+
+/* === Responsive Design === */
+@media screen and (min-width: 768px) {
+  nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    max-width: 900px; /* Limit the gallery width */
+    padding: 0; /* Remove padding on large screens */
+    margin: 0 auto; /* Ensure the gallery container is centered */
+  }
+
+  button.menu {
+    display: none; /* Hide menu button on large screens */
+  }
+}
+
+
+
