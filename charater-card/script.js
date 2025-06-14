@@ -8,14 +8,17 @@ const character = {
   attacked() {
     if (this.health >= 20) {
       this.health -= 20;
+      return "Snortleblat was attacked and lost 20 health!";
     } else {
       this.health = 0;
+      return "Snortleblat has died.";
     }
   },
 
   levelUp() {
     this.level += 1;
     this.health += 20;
+    return "Snortleblat leveled up and gained 20 health!";
   }
 };
 
@@ -54,3 +57,4 @@ levelUpBtn.addEventListener('click', () => {
 
 // Initial display
 updateDisplay();
+
