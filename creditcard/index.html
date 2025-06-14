@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Credit Card Form</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<form id="card-form">
+  <div class="cards-wrapper">
+    <p class="errorMsg" style="color: red; font-size: 0.9rem; margin-bottom: 1rem;"></p>
+
+    <div class="card-front">
+      <div class="total-text">TOTAL: $199</div>
+     <img
+        src="favicon.png"
+        alt="Card logo"
+        class="card-logo"
+      />
+
+
+      <label for="card-number" class="label-card-number">CARD NUMBER</label>
+      <input
+        id="card-number"
+        name="card-number"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9\s]{13,19}"
+        maxlength="19"
+        placeholder="1234 5678 9101 1020"
+        required
+      />
+
+      <div class="card-bottom-row">
+        <div class="card-holder-wrapper">
+          <label for="card-holder">CARD HOLDER</label>
+          <input
+            id="card-holder"
+            name="card-holder"
+            type="text"
+            placeholder="John Doe"
+            minlength="2"
+            maxlength="30"
+            required
+          />
+        </div>
+
+        <div class="expiration-wrapper">
+          <label>EXPIRATION</label>
+          <div class="expiration-inputs">
+            <input
+              id="exp-month"
+              name="exp-month"
+              type="text"
+              inputmode="numeric"
+              maxlength="2"
+              pattern="(0[1-9]|1[0-2])"
+              placeholder="MM"
+              required
+            />
+            <input
+              id="exp-year"
+              name="exp-year"
+              type="text"
+              inputmode="numeric"
+              maxlength="2"
+              pattern="[0-9]{2}"
+              placeholder="YY"
+              required
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-back">
+      <div class="magnetic-strip"></div>
+
+      <div class="cvc-wrapper">
+        <label for="cvc">CVC/CVV</label>
+        <input
+          id="cvc"
+          name="cvc"
+          type="text"
+          inputmode="numeric"
+          maxlength="3"
+          pattern="\d{3}"
+          placeholder="XXX"
+          required
+        />
+      </div>
+    </div>
+
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
