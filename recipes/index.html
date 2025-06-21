@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>RecipeBook</title>
+  <meta name="description" content="A collection of simple, delicious recipes like Apple Crisp—perfect for sharing and trying at home.">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="RecipeBook" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="A collection of simple, delicious recipes like Apple Crisp—perfect for sharing and trying at home." />
+  <meta property="og:image" content="https://yourdomain.com/images/apple-crisp.png" />
+  <meta property="og:url" content="https://yourdomain.com/index.html" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts & Styles -->
+  <link rel="stylesheet" href="recipes.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+    <h1>
+      <img src="images/recipe-book.png" alt="RecipeBook Logo" style="height: 40px; vertical-align: middle;">
+      RecipeBook
+    </h1>
+    <form>
+      <input type="text" placeholder="Find a recipe" name="search" aria-label="Find a recipe">
+      <button type="submit" aria-label="Search">&#128269;</button> <!-- magnifying glass icon -->
+    </form>
+  </header>
+
+  <!-- Main Content -->
+  <main id="recipes-container">
+  <!-- Recipes will be injected here -->
+    </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <p style="font-size: 0.6em;">
+      <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons" target="_blank">
+        Recipe icons created by Freepik - Flaticon
+      </a>
+    </p>
+
+    <div class="social">
+      <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
+      <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+    </div>
+  </footer>
+
+  <script src="recipes.js"></script>
+  </div>
+</body>
+
+</html>
