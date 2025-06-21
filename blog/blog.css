@@ -39,65 +39,7 @@ nav li a {
   font-size: 1.2rem;
 }
 
-/* Layout Grid */
-main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.book {
-  display: grid;
-  grid-template-columns: 150px 1fr; /* Adjust width of meta column */
-  gap: 1rem;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2rem;
-  align-items: start; /* optional: top-align both columns */
-}
-
-.book-meta {
-  /* Now in its own column (left) */
-  font-size: 0.9rem;
-  line-height: 1.6;
-  text-align: left; /* Ensures left-hugging */
-}
-
-.book-content {
-  /* Stays in the right column */
-}
-
-.book-content a {
-  color: #AF1B3F;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.book-content a:hover {
-  text-decoration: underline;
-}
-
-
-.book-content h2 {
-  margin: 0 0 1rem;
-  color: #AF1B3F; /* Match the link/nav color */
-}
-
-
-.book-content img {
-  width: 200px;
-  height: auto;
-  background-color: #eee;
-}
-
-
-.filters {
-  border: 1px solid #ccc;
-  padding: 1rem;
-}
-
+/* Skip to Content */
 .skiptocontent a {
   position: absolute;
   top: -40px;
@@ -112,5 +54,77 @@ main {
 }
 
 .skiptocontent a:focus {
-  top: 10px; /* Or wherever you want it to slide into view */
+  top: 10px;
+}
+
+/* Layout Grid */
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 900px; /* Match nav max-width for alignment */
+  margin: 0 auto;
+}
+
+/* Article Layout */
+.book {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  border-bottom: 1px solid #E6C36B;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem; /* Extra space between articles */
+  align-items: start;
+}
+
+.book-meta {
+  font-size: 1rem; /* Increased font size */
+  line-height: 1.4; /* Slightly reduced line spacing */
+  text-align: right; /* Right-align all details */
+  border-right: 1px solid #E6C36B; /* Right border */
+  padding: 0 1rem; /* Left/right spacing for padding match */
+}
+
+.book-content {
+  padding-left: 1rem;
+}
+
+.book-content h2 {
+  margin: 0 0 1rem;
+  margin-top: 0.2rem; /* Align top with date */
+  color: #AF1B3F;
+}
+
+.book-content h2 a {
+  color: #AF1B3F;
+  text-decoration: none;
+}
+
+.book-content h2 a:hover {
+  text-decoration: underline;
+}
+
+.book-content a {
+  color: #AF1B3F;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book-content a:hover {
+  text-decoration: underline;
+}
+
+.book-content img {
+  display: block; /* Allow margin auto to center */
+  margin: 1rem auto; /* Center image and add spacing */
+  width: 200px;
+  height: auto;
+  background-color: #eee;
+}
+
+/* Filters */
+.filters {
+  border: 1px solid #E6C36B;
+  padding: 1rem;
 }
