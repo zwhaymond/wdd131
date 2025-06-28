@@ -281,35 +281,79 @@ const recipes = [
 ];
 
 
-function displayRecipes() {
-  const container = document.getElementById('recipes-container');
-
-  recipes.forEach(recipe => {
-    const recipeCard = document.createElement('section');
-    recipeCard.classList.add('recipe-card');
-
-    const stars = Math.floor(recipe.rating);
-    const emptyStars = 5 - stars;
-    const ratingSpan = `
-      <span class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
-        ${'⭐'.repeat(stars)}
-        ${'☆'.repeat(emptyStars)}
-      </span>
-    `;
-
-    recipeCard.innerHTML = `
-      <img src="${recipe.image}" alt="${recipe.name}">
-      <div class="recipe-details">
-        <span class="category">${recipe.tags.join(', ')}</span>
-        <h2>${recipe.name}</h2>
-        ${ratingSpan}
-        <p class="description">${recipe.description}</p>
-      </div>
-    `;
-
-    container.appendChild(recipeCard);
-  });
+function random(num) {
+  return Math.floor(Math.random() * num);
 }
 
-document.addEventListener("DOMContentLoaded", displayRecipes);
+function getRandomListEntry(list) {
+  return list[random(list.length)];
+}
+
+// === TEMPLATE FUNCTIONS ===
+function tagsTemplate(tags) {
+  return `<ul class="recipe__tags">
+    ${tags.map(tag => `<li>${tag}</li>`).join('')}
+  </ul>`;
+}
+
+function ratingTemplate(rating) {
+  let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
+  for (let i = 1; i <= 5; i++) {
+    html += i <= rating
+      ? `<span aria-hidden="true" class="icon-star">⭐</span>`
+      : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
+  }
+  html += `</span>`;
+  return html;
+}
+
+function recipeTemplate(recipe) {
+  return `
+    <figure class="recipe-card">
+      <img src="${recipe.image}" alt="Image of ${recipe.name}" />
+      <figcaption class="recipe-details">
+        ${tagsTemplate(recipe.tags)}
+        <h2><a href="#">${recipe.name}</a></h2>
+        <p class="recipe__ratings">${ratingTemplate(recipe.rating)}</p>
+        <p class="recipe__description description">${recipe.description}</p>
+      </figcaption>
+    </figure>
+  `;
+}
+
+// === RENDERING FUNCTIONS ===
+function renderRecipes(recipeList) {
+  const container = document.getElementById('recipes-container');
+  container.innerHTML = recipeList.map(recipeTemplate).join('');
+}
+
+// === FILTERING FUNCTIONALITY ===
+function filterRecipes(query) {
+  return recipes
+    .filter(recipe => {
+      const q = query.toLowerCase();
+      const inName = recipe.name.toLowerCase().includes(q);
+      const inDesc = recipe.description.toLowerCase().includes(q);
+      const inTags = recipe.tags.find(tag => tag.toLowerCase().includes(q));
+      const inIngredients = recipe.recipeIngredient.find(ing => ing.toLowerCase().includes(q));
+      return inName || inDesc || inTags || inIngredients;
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function searchHandler(event) {
+  event.preventDefault();
+  const query = document.querySelector('input[name="search"]').value;
+  const filtered = filterRecipes(query);
+  renderRecipes(filtered);
+}
+
+// === INIT ===
+function init() {
+  const recipe = getRandomListEntry(recipes);
+  renderRecipes([recipe]);
+  document.querySelector('form').addEventListener('submit', searchHandler);
+}
+
+document.addEventListener("DOMContentLoaded", init);
 
