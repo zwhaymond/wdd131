@@ -11,7 +11,7 @@
 <body class="reviews">
   <header>
   <a href="index.html" class="logo-link">
-    <img src="styles/logo.jpg" alt="Logo" class="logo">
+    <img src="styles/logo.webp" alt="Logo" class="logo">
   </a>
   <h1>Game Review Central</h1>
   <nav>
@@ -26,7 +26,8 @@
 
     <div class="controls">
       <input id="searchBar" type="text" placeholder="Search games..." />
-      <select id="tagFilter">
+      <label for="tagFilter" class="visually-hidden">Filter by Tag</label>
+      <select id="tagFilter" name="tagFilter">
         <option value="all">All Tags</option>
         <option value="souls-like">Souls-like</option>
         <option value="anime">Anime</option>
@@ -47,7 +48,7 @@
         <option value="cute">Cute</option>
         <option value="fantasy">Fantasy</option>
         <option value="rpg">RPG</option>
-        <option value="first-person shooter">First-Person Shooter</option>
+        <option value="FPS">FPS</option>
         <option value="team-based">Team-Based</option>
       </select>
       <button id="searchButton" aria-label="Search">
@@ -58,7 +59,7 @@
     <section class="game-review" id="ai-limit">
   <h2>AI Limit</h2>
   <div class="top-row">
-    <img src="images/AI-limt.webp" alt="AI Limit game image" class="game-image" />
+    <img src="images/AI-limit.webp" alt="AI Limit game image" class="game-image" />
     <div class="game-info">
       <p><strong>Company:</strong> Team Gravity</p>
       <p><strong>URL:</strong> <a href="https://store.steampowered.com/app/2407270/AI_LIMIT/" target="_blank" rel="noopener noreferrer">Steam Page</a></p>
@@ -67,7 +68,7 @@
       <p><strong>Tags:</strong> Souls-like, Anime, Female Protagonist, Action RPG</p>
       <p><strong>Game Size:</strong> Approx. 8 GB</p>
     </div>
-    <img src="images/AI-limi-gameplay.webp" alt="AI Limit gameplay image" class="gameplay-image" />
+    <img src="images/AI-limit-gameplay.webp" alt="AI Limit gameplay image" class="gameplay-image" />
   </div>
   <div class="remainder-text">
     <p><strong>Description:</strong> An anime-inspired Soulslike action RPG featuring fast-paced combat and a post-apocalyptic world.</p>
@@ -232,7 +233,7 @@
       <p><strong>URL:</strong> <a href="https://store.steampowered.com/app/2073850/THE_FINALS/" target="_blank" rel="noopener noreferrer">Steam Page</a></p>
       <p><strong>Average Play Time:</strong> 10–20 hours</p>
       <p><strong>Date Published:</strong> Early Access 2023</p>
-      <p><strong>Tags:</strong> First-Person Shooter, Team-Based, PvP, Environmental Destruction</p>
+      <p><strong>Tags:</strong> FPS, Team-Based, PvP, Environmental Destruction</p>
       <p><strong>Game Size:</strong> Approx. 15 GB</p>
     </div>
     <img src="images/The-Finals-gameplay.webp" alt="The Finals gameplay image" class="gameplay-image" />

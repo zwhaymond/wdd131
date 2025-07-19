@@ -2,6 +2,7 @@
 <html lang="en-us">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Controvled Game Reviews</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <script defer src="main.js"></script>
@@ -9,7 +10,7 @@
 <body>
 <header>
   <a href="index.html" class="logo-link">
-    <img src="styles/logo.jpg" alt="Logo" class="logo">
+    <img src="styles/logo.webp" alt="Logo" class="logo">
   </a>
   <h1>Game Review Central</h1>
   <nav>
@@ -24,7 +25,8 @@
   <main>
     <div class="controls">
       <input id="searchBar" type="text" placeholder="Search games..." />
-      <select id="tagFilter">
+      <label for="tagFilter" class="visually-hidden">Filter by Tag</label>
+      <select id="tagFilter" name="tagFilter">
         <option value="all">All Tags</option>
         <option value="souls-like">Souls-like</option>
         <option value="anime">Anime</option>
@@ -45,7 +47,7 @@
         <option value="cute">Cute</option>
         <option value="fantasy">Fantasy</option>
         <option value="rpg">RPG</option>
-        <option value="first-person shooter">First-Person Shooter</option>
+        <option value="FPS">FPS</option>
         <option value="team-based">Team-Based</option>
       </select>
       <button id="searchButton" aria-label="Search">
@@ -60,7 +62,7 @@
         <article data-tags="souls-like, anime, female protagonist">
           <h3>AI Limit</h3>
           <p><strong>Tags:</strong> Souls-like, Anime, Female Protagonist</p>
-          <img src="images/AI-limt.webp" alt="AI Limit game image" />
+          <img src="images/AI-limit.webp" alt="AI Limit game image" />
           <button class="toggle-more">More</button>
           <div class="more-content">
             <p>A visually striking anime-style action RPG that blends Souls-like combat with a deep post-apocalyptic narrative.</p>
@@ -153,9 +155,9 @@
           </div>
         </article>
 
-        <article data-tags="first-person shooter, team-based, pvp">
+        <article data-tags="FPS, team-based, pvp">
           <h3>The Finals</h3>
-          <p><strong>Tags:</strong> First-Person Shooter, Team-Based, PvP</p>
+          <p><strong>Tags:</strong> FPS, Team-Based, PvP</p>
           <img src="images/The-Finals.webp" alt="The Finals game image" />
           <button class="toggle-more">More</button>
           <div class="more-content">

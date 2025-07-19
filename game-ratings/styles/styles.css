@@ -407,10 +407,13 @@ body.reviews .logo {
 
 .game-review .top-row {
   display: flex;
+  flex-wrap: wrap; /* Add this if it's not there */
   gap: 1.5em;
   margin-bottom: 1em;
-  align-items: center; /* vertically center the info */
+  align-items: center;
 }
+
+
 
 @media (max-width: 700px) {
   .game-review .top-row {
@@ -419,19 +422,27 @@ body.reviews .logo {
   }
   
   .game-review .game-image,
-  .game-review .gameplay-image {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1em;
-  }
+.game-review .gameplay-image {
+  max-width: 100%;       /* Prevents overflow */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #555;
+}
+
 }
 
 
 /* Make sure both images have the same height */
 .game-review .game-image {
-  height: 100%;
+  width: 100%;         /* Let image fill the container width */
+  max-width: 180px;    /* Keep a max width so it doesn’t get too large */
+  height: auto;        /* Maintain aspect ratio */
+  border-radius: 8px;
+  border: 1px solid #555;
+  object-fit: contain; /* Prevent cropping */
 }
+
 
 .game-review .gameplay-image {
   height: 275px;
@@ -447,12 +458,15 @@ body.reviews .logo {
 
 .game-review .game-info {
   flex-grow: 1;
+  flex-shrink: 1;      /* allow shrinking */
+  min-width: 200px;    /* keep a minimum width */
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #ccc;
   font-size: 0.95rem;
 }
+
 
 .game-review .game-info p {
   margin: 4px 0;
@@ -473,3 +487,13 @@ body.reviews .logo {
   font-size: 0.95rem;
   color: #ddd;
 }
+
+.game-review .top-row p {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%; /* Ensure it doesn't exceed the row */
+  flex: 1 1 100%;  /* Allow it to take full row width if needed */
+}
+
+
