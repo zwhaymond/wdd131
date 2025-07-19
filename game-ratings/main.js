@@ -74,3 +74,54 @@ function updateGridAlignment() {
     grid.style.justifyContent = 'start';
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchBar');
+  const tagFilter = document.getElementById('tagFilter');
+  const searchButton = document.getElementById('searchButton');
+  const gameReviews = document.querySelectorAll('.game-review');
+
+  function filterGames() {
+    const searchText = searchInput.value.toLowerCase().replace(/-/g, ' ');
+    const selectedTag = tagFilter.value;
+
+    gameReviews.forEach(section => {
+      const textContent = section.textContent.toLowerCase();
+
+      const tagsPara = Array.from(section.querySelectorAll('p')).find(p =>
+        p.textContent.toLowerCase().startsWith('tags:')
+      );
+      const tagsText = tagsPara ? tagsPara.textContent.toLowerCase() : '';
+
+      const matchesSearch = searchText === '' || textContent.includes(searchText);
+      const matchesTag = selectedTag === 'all' || tagsText.includes(selectedTag);
+
+      section.style.display = (matchesSearch && matchesTag) ? '' : 'none';
+    });
+  }
+
+  // Check if URL has hash on page load
+  const urlHash = window.location.hash;
+  if (urlHash) {
+    // Remove the '#' and replace dashes with spaces for matching
+    const hashValue = urlHash.substring(1).toLowerCase().replace(/-/g, ' ');
+
+    // Set search bar value to hash value
+    searchInput.value = hashValue;
+
+    // Automatically filter once on page load
+    filterGames();
+  }
+
+  // Only filter on button click or Enter key press
+  searchButton.addEventListener('click', filterGames);
+  searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      filterGames();
+    }
+  });
+});
+
+
+
+
