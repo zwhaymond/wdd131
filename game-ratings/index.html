@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>Controvled Game Reviews</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script defer src="game_rating.js"></script>
+</head>
+<body>
+  <header>
+  <a href="index.html" class="logo-link">
+    <img src="styles/logo.jpg" alt="Logo" class="logo">
+  </a>
+  <h1>Game Review Central</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="reviews.html">Reviews</a>
+  </nav>
+</header>
+
+
+
+  <main>
+    <div class="controls">
+      <input id="searchBar" type="text" placeholder="Search games..." />
+      <select id="tagFilter">
+        <option value="all">All Tags</option>
+        <option value="souls-like">Souls-like</option>
+        <option value="anime">Anime</option>
+        <option value="female protagonist">Female Protagonist</option>
+        <option value="fps">FPS</option>
+        <option value="sci-fi">Sci-fi</option>
+        <option value="story rich">Story Rich</option>
+        <option value="looter shooter">Looter Shooter</option>
+        <option value="co-op">Co-op</option>
+        <option value="indie">Indie</option>
+        <option value="villain protagonist">Villain Protagonist</option>
+        <option value="horror">Horror</option>
+        <option value="post-apocalyptic">Post-apocalyptic</option>
+        <option value="mmorpg">MMORPG</option>
+        <option value="pvp">PvP</option>
+        <option value="survival">Survival</option>
+        <option value="pvpve">PvPvE</option>
+        <option value="cute">Cute</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="rpg">RPG</option>
+        <option value="first-person shooter">First-Person Shooter</option>
+        <option value="team-based">Team-Based</option>
+      </select>
+      <button id="searchButton" aria-label="Search">
+  <img src="images/search.svg" alt="Search icon" class="search-icon" />
+</button>
+
+    </div>
+
+    <section id="gameList">
+      <div class="game-grid">
+
+        <article data-tags="souls-like, anime, female protagonist">
+          <h3>AI Limit</h3>
+          <p><strong>Tags:</strong> Souls-like, Anime, Female Protagonist</p>
+          <img src="images/AI-limt.png" alt="AI Limit game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A visually striking anime-style action RPG that blends Souls-like combat with a deep post-apocalyptic narrative.</p>
+            <p><strong>Rating:</strong> <span data-rating="4"></span></p>
+            <a href="page2.html#ai-limit">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="fps, sci-fi, story rich">
+          <h3>Bioshock</h3>
+          <p><strong>Tags:</strong> FPS, Sci-fi, Story Rich</p>
+          <img src="images/Bioshock.png" alt="Bioshock game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A hauntingly immersive shooter set in the underwater city of Rapture, delivering a mind-bending narrative.</p>
+            <p><strong>Rating:</strong> <span data-rating="4"></span></p>
+            <a href="page2.html#bioshock">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="looter shooter, fps, co-op">
+          <h3>Borderlands 3</h3>
+          <p><strong>Tags:</strong> Looter Shooter, FPS, Co-op</p>
+          <img src="images/Borderlands-3.png" alt="Borderlands 3 game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A chaotic, loot‑dumping FPS with co‑op action and juvenile humor. Fun—if you can handle the bugs.</p>
+            <p><strong>Rating:</strong> <span data-rating="3"></span></p>
+            <a href="page2.html#borderlands-3">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="indie, villain protagonist, horror, sci-fi">
+          <h3>Carrion</h3>
+          <p><strong>Tags:</strong> Indie, Villain Protagonist, Horror, Sci-fi</p>
+          <img src="images/Carrion.png" alt="Carrion game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A chilling reverse-horror experience where you play as an amorphous monster, devouring your enemies and evolving through a gory, atmospheric, metroidvania-style facility.</p>
+            <p><strong>Rating:</strong> <span data-rating="4"></span></p>
+            <a href="page2.html#carrion">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="souls-like, anime, post-apocalyptic">
+          <h3>Code Vein</h3>
+          <p><strong>Tags:</strong> Souls-like, Anime, Post-apocalyptic</p>
+          <img src="images/Code-Vein.png" alt="Code Vein game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A stylish anime-inspired action RPG that combines challenging Soulslike combat with a rich, dystopian narrative.</p>
+            <p><strong>Rating:</strong> <span data-rating="4"></span></p>
+            <a href="page2.html#code-vein">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="looter shooter, mmorpg, pvp">
+          <h3>Destiny 2</h3>
+          <p><strong>Tags:</strong> Looter Shooter, MMORPG, PvP</p>
+          <img src="images/Destiny-2.png" alt="Destiny 2 game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>An expansive online-only shooter with MMO elements, fast-paced combat, and cooperative raids. Recent content pacing may disappoint some players.</p>
+            <p><strong>Rating:</strong> <span data-rating="3"></span></p>
+            <a href="page2.html#destiny-2">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="survival, mmorpg, pvpve, co-op">
+          <h3>Dune: Awakening</h3>
+          <p><strong>Tags:</strong> Survival, MMORPG, PvPvE, Co-op</p>
+          <img src="images/Dune.png" alt="Dune Awakening game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>An immersive survival game set on the desert planet of Arrakis, focusing on faction-based politics and harsh environments.</p>
+            <p><strong>Rating:</strong> <span data-rating="3"></span></p>
+            <a href="page2.html#dune-awakening">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="cute, fantasy, rpg">
+          <h3>Fantasy Life: The Girl Who Stole Time</h3>
+          <p><strong>Tags:</strong> Cute, Fantasy, RPG</p>
+          <img src="images/Fantasy-Life.png" alt="Fantasy Life game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A charming life simulation RPG where players explore an open world, engage in a variety of professions, and unravel a magical story.</p>
+            <p><strong>Rating:</strong> <span data-rating="5"></span></p>
+            <a href="page2.html#fantasy-life">Read more &raquo;</a>
+          </div>
+        </article>
+
+        <article data-tags="first-person shooter, team-based, pvp">
+          <h3>The Finals</h3>
+          <p><strong>Tags:</strong> First-Person Shooter, Team-Based, PvP</p>
+          <img src="images/The-Finals.png" alt="The Finals game image" />
+          <button class="toggle-more">More</button>
+          <div class="more-content">
+            <p>A visually striking FPS focused on environmental destruction, fast-paced combat, and team coordination.</p>
+            <p><strong>Rating:</strong> <span data-rating="4"></span></p>
+            <a href="page2.html#the-finals">Read more &raquo;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+    </div>
+    <p>&copy; 2025 Controvled by Zachary Haymond | WDD 131-01</p>
+  </footer>
+</body>
+</html>
